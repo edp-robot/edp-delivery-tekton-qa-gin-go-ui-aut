@@ -1,0 +1,1 @@
+1. Application gin-go-ui-aut has been successfully deployed!!

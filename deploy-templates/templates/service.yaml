@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "gin-go-ui-aut.fullname" . }}
+  labels:
+    {{- include "gin-go-ui-aut.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "gin-go-ui-aut.selectorLabels" . | nindent 4 }}
